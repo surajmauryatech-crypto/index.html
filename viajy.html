@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BDGWIN Sureshots</title>
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #050a14;
+            color: #ffffff;
+            overflow-x: hidden;
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Background Animation Canvas */
+        #particle-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+
+        /* Main Content Container */
+        .container {
+            position: relative;
+            z-index: 10;
+            width: 100%;
+            max-width: 400px;
+            padding: 20px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Logo Styling */
+        .logo {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            box-shadow: 0 0 25px 5px rgba(0, 255, 200, 0.3);
+            border: 2px solid rgba(0, 255, 200, 0.5);
+        }
+
+        /* Typography */
+        h1 {
+            color: #ffd700;
+            font-size: 24px;
+            margin-bottom: 15px;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+        }
+
+        .subtitle {
+            font-size: 15px;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        /* Glowing Divider */
+        .divider {
+            width: 100%;
+            height: 2px;
+            background: radial-gradient(circle, rgba(0, 255, 150, 0.8) 0%, rgba(0, 0, 0, 0) 80%);
+            margin: 20px 0;
+            border-radius: 50%;
+        }
+
+        /* Buttons */
+        .btn {
+            display: block;
+            width: 100%;
+            background: linear-gradient(90deg, #ffb700 0%, #ff6b00 100%);
+            color: #000000;
+            text-decoration: none;
+            padding: 16px;
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: 800;
+            margin: 10px 0;
+            transition: transform 0.2s;
+            box-shadow: 0 0 20px 5px rgba(255, 120, 0, 0.4);
+        }
+
+        .btn:active {
+            transform: scale(0.95);
+        }
+
+        /* Timer */
+        .timer-text {
+            color: #ff4444;
+            font-weight: bold;
+            font-size: 15px;
+            margin: 10px 0;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 30px;
+            color: #888888;
+            font-size: 11px;
+            padding-bottom: 20px;
+        }
+    </style>
+
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+
+    // Yahan apna Pixel ID daalein (YOUR_PIXEL_ID ki jagah)
+    fbq('init', ''); 
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1674300820240240&ev=PageView&noscript=1"
+    /></noscript>
+    </head>
+<body>
+
+    <canvas id="particle-canvas"></canvas>
+
+    <div class="container">
+        <img src="https://i.ibb.co/XZGMybzK/IMG-20260402-095816-906.jpg"" alt="" class="logo">
+
+        <h1>VHXM TRADER</h1>
+        <p class="subtitle">🔥 Get Daily Live Sureshot Updates</p>
+        <p class="subtitle">💯 Join Our Telegram & Never Miss a Chance</p>
+
+        <div class="divider"></div>
+
+        <a href="https://t.me/+FIccYpyutxliMGU1" class="btn" target="_blank" id="btn1">🚀 JOIN TELEGRAM NOW</a>
+
+        <p class="timer-text">⏳ Redirecting in: <span id="timer">7</span>s</p>
+
+        <a href="https://t.me/+FIccYpyutxliMGU1" class="btn" target="_blank" id="btn2">🚀 JOIN TELEGRAM NOW</a>
+
+        <footer>© 2026 @SURAJDIGITALAGENCY ADS TG, All rights reserved.</footer>
+    </div>
+
+    <script>
+        // ==========================================
+        // TELEGRAM REDIRECT LINK YAHAN DALEIN
+        // ==========================================
+        const telegramLink = "https://t.me/+FIccYpyutxliMGU1";
+
+        // Buttons ka link bhi auto update karne ke liye
+        document.getElementById("btn1").href = telegramLink;
+        document.getElementById("btn2").href = telegramLink;
+
+        // --- COUNTDOWN TIMER & AUTO REDIRECT SCRIPT ---
+        let timeLeft = 10; // 10 seconds ka timer
+        const timerElement = document.getElementById('timer');
+
+        const countdown = setInterval(() => {
+            timeLeft--;
+            timerElement.textContent = timeLeft;
+
+            if (timeLeft <= 0) {
+                clearInterval(countdown); // Timer ko rokein
+                // Auto Redirect Code
+                window.location.href = telegramLink; 
+            }
+        }, 1000);
+
+        // --- BACKGROUND ANIMATION SCRIPT ---
+        const canvas = document.getElementById('particle-canvas');
+        const ctx = canvas.getContext('2d');
+
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        let particlesArray = [];
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 2 + 0.5;
+                this.speedX = (Math.random() * 1) - 0.5;
+                this.speedY = (Math.random() * 1) - 0.5;
+            }
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+                if (this.x > canvas.width) this.x = 0;
+                if (this.x < 0) this.x = canvas.width;
+                if (this.y > canvas.height) this.y = 0;
+                if (this.y < 0) this.y = canvas.height;
+            }
+            draw() {
+                ctx.fillStyle = 'rgba(0, 255, 200, 0.5)';
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.closePath();
+                ctx.fill();
+            }
+        }
+
+        function init() {
+            particlesArray = [];
+            for (let i = 0; i < 70; i++) {
+                particlesArray.push(new Particle());
+            }
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            for (let i = 0; i < particlesArray.length; i++) {
+                particlesArray[i].update();
+                particlesArray[i].draw();
+            }
+            requestAnimationFrame(animate);
+        }
+
+        window.addEventListener('resize', function() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            init();
+        });
+
+        init();
+        animate();
+    </script>
+</body>
+</html>
